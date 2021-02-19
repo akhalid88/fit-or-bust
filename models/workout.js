@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const WorkoutSchema = new Schema({
-	date: {
+	day: {
 		type: Date,
 		required: "Enter a date"
 	},
@@ -12,7 +12,8 @@ const WorkoutSchema = new Schema({
 			type: Schema.Types.ObjectId,
 			ref: "Exercises"
 		}
-	]
+	],
+
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
