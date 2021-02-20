@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const ExerciseSchema = new Schema({
 	type: {
 		type: String,
+		required: "Type of exercise is required",
 		enum: ["resistance", "cardio"]
 	},
 	name: {
