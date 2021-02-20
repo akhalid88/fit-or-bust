@@ -40,18 +40,18 @@ const WorkoutSchema = new Schema({
 				min: 1
 			}
 		}
-	],
-	totalDuration: {
-		type: Number,
-		default: 0
-	}
+	]
+	// totalDuration: {
+	// 	type: Number,
+	// 	default: 0
+	// }
 });
 
-WorkoutSchema.methods.getTotalWorkoutDuration = function () {
-	this.exercises.forEach(element => {
-		return this.totalDuration += element.duration;
-	});
-}
+// WorkoutSchema.methods.getTotalWorkoutDuration = function () {
+// 	this.exercises.forEach(element => {
+// 		return this.totalDuration += element.duration;
+// 	});
+// }
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 

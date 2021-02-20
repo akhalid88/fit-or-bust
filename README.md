@@ -15,7 +15,9 @@ This readme has been procedurally generated
 
 -----------------------
 ## Description
-Fitness tracker for those weak of will
+Fitness tracker for those looking to strengthen themselves to fight in the upcoming gladiatorial arena. Prospective fighters can keep track of resistance or cardio training. This app is not for the weak of will.
+
+![Main Page](readme/mainpage.png)
 
 -----------------------
 ## Deployed link
