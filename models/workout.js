@@ -41,7 +41,7 @@ const WorkoutSchema = new Schema({
 			}
 		}
 	],
-	totalWorkoutDuration: {
+	totalDuration: {
 		type: Number,
 		default: 0
 	}
@@ -49,7 +49,7 @@ const WorkoutSchema = new Schema({
 
 WorkoutSchema.methods.getTotalWorkoutDuration = function () {
 	this.exercises.forEach(element => {
-		this.totalWorkoutDuration += element.duration;
+		return this.totalDuration += element.duration;
 	});
 }
 
