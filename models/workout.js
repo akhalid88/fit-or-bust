@@ -9,12 +9,49 @@ const WorkoutSchema = new Schema({
 	},
 	exercises: [
 		{
-			type: Schema.Types.ObjectId,
-			ref: "Exercises"
+			type: {
+				type: String,
+				required: "Type of exercise is required",
+				enum: ["resistance", "cardio"]
+			},
+			name: {
+				type: String,
+				required: "Enter a name you weak fool"
+			},
+			duration: {
+				type: Number,
+				required: "How long did you exercise. Don't lie",
+				min: 1
+			},
+			weight: {
+				type: Number,
+				min: 1
+			},
+			reps: {
+				type: Number,
+				min: 1
+			},
+			sets: {
+				type: Number,
+				min: 1
+			},
+			distance: {
+				type: Number,
+				min: 1
+			}
 		}
 	],
-
+	totalWorkoutDuration: {
+		type: Number,
+		default: 0
+	}
 });
+
+WorkoutSchema.methods.getTotalWorkoutDuration = function () {
+	this.exercises.forEach(element => {
+		this.totalWorkoutDuration += element.duration;
+	});
+}
 
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
